@@ -4,48 +4,82 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html,
+body {
+    width: 100%;
+    min-height: 100%;
 }
 
 body {
-    font-family: Georgia, serif;
-    background: linear-gradient(135deg, #18000f, #4d0b32, #8e2458);
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(circle at top, #7d3157, transparent 45%),
+        linear-gradient(135deg, #17000d, #430d2d, #7b2450);
     color: white;
-    min-height: 100vh;
     overflow-x: hidden;
 }
 
 /* =========================
-   TELA INICIAL
+   TELAS
 ========================= */
 
-.inicio {
+.tela {
+    display: none;
     min-height: 100vh;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    padding: 40px 20px;
+
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+
     text-align: center;
 }
 
-.inicio .coracao {
-    font-size: 85px;
+.tela.ativa {
+    display: flex;
+    animation: entrar 0.8s ease;
+}
+
+/* =========================
+   TEXTOS
+========================= */
+
+h1 {
+    font-size: 45px;
+    margin: 15px 0;
+}
+
+h2 {
+    font-size: 34px;
     margin-bottom: 20px;
-    animation: pulsar 1.6s infinite;
-    filter: drop-shadow(0 0 25px #ff4f9a);
 }
 
-.inicio h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
+h3 {
+    font-size: 22px;
+    margin: 8px 0;
 }
 
-.inicio p {
+p {
     font-size: 18px;
     line-height: 1.7;
-    max-width: 500px;
+}
+
+.tela > p {
+    max-width: 600px;
+}
+
+/* =========================
+   ÍCONES
+========================= */
+
+.icone {
+    font-size: 80px;
+    margin-bottom: 20px;
+
+    animation: pulsar 1.6s infinite;
+
+    filter: drop-shadow(0 0 20px rgba(255, 120, 180, 0.8));
 }
 
 /* =========================
@@ -54,117 +88,93 @@ body {
 
 button {
     border: none;
-    padding: 15px 28px;
+    padding: 15px 30px;
+    margin-top: 30px;
+
     border-radius: 50px;
-    margin-top: 25px;
 
     background: white;
-    color: #8e2458;
+    color: #8c2555;
 
-    font-size: 16px;
+    font-size: 17px;
     font-weight: bold;
 
     cursor: pointer;
 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 
     transition: 0.3s;
 }
 
 button:hover {
-    transform: translateY(-3px) scale(1.04);
+    transform: scale(1.07);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
 }
 
 /* =========================
-   ÁREA DO PRESENTE
+   HISTÓRIA
 ========================= */
 
-.presente {
-    display: none;
+.historia {
     width: 100%;
-    max-width: 850px;
-
-    margin: auto;
-    padding: 70px 20px;
-    text-align: center;
-}
-
-.presente > .coracao {
-    font-size: 70px;
-    margin-bottom: 15px;
-
-    animation: pulsar 1.6s infinite;
-}
-
-.presente > h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.presente > p {
     max-width: 650px;
-    margin: 0 auto 50px;
 
-    font-size: 18px;
-    line-height: 1.8;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    margin-top: 15px;
 }
 
-/* =========================
-   CARTÕES
-========================= */
+.momento {
+    padding: 22px;
 
-.cartao {
-    width: 100%;
-    max-width: 700px;
+    background: rgba(255, 255, 255, 0.09);
 
-    margin: 30px auto;
-    padding: 35px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 
-    background: rgba(255,255,255,0.09);
+    border-radius: 20px;
 
-    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
 
-    border-radius: 25px;
-
-    backdrop-filter: blur(12px);
-
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 
     transition: 0.3s;
 }
 
-.cartao:hover {
+.momento:hover {
     transform: translateY(-4px);
 }
 
-.cartao h3 {
-    font-size: 26px;
-    margin-bottom: 18px;
-}
-
-.cartao > p {
-    font-size: 17px;
-    line-height: 1.8;
+.momento span {
+    font-size: 28px;
 }
 
 /* =========================
    MOTIVOS
 ========================= */
 
-#motivos {
-    margin-top: 25px;
+.motivos {
+    width: 100%;
+    max-width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    margin-top: 10px;
 }
 
-#motivos p {
-    margin: 10px auto;
-    padding: 12px;
+.motivos p {
+    padding: 15px;
 
-    max-width: 400px;
+    background: rgba(255, 255, 255, 0.09);
 
-    background: rgba(255,255,255,0.08);
-    border-radius: 15px;
+    border-radius: 18px;
 
-    animation: aparecer 0.5s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    animation: aparecer 0.6s ease;
 }
 
 /* =========================
@@ -172,76 +182,51 @@ button:hover {
 ========================= */
 
 .carta {
-    display: none;
-
+    width: 100%;
     max-width: 600px;
 
-    margin: 30px auto 0;
     padding: 30px;
 
     background: #fff8fc;
 
     color: #542039;
 
-    border-radius: 20px;
+    border-radius: 22px;
 
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
 
-    animation: carta 0.7s ease;
+    text-align: left;
+
+    animation: abrirCarta 0.8s ease;
 }
 
 .carta p {
-    font-size: 17px;
-    line-height: 1.9;
+    margin-bottom: 18px;
 }
 
 /* =========================
-   SURPRESA FINAL
+   SURPRESA
 ========================= */
 
-.final {
-    width: 100%;
-    max-width: 700px;
+.surpresa {
+    display: none;
 
-    margin: 70px auto 20px;
-    padding: 45px 25px;
+    max-width: 600px;
 
-    text-align: center;
-
-    background: rgba(255,255,255,0.08);
-
-    border: 1px solid rgba(255,255,255,0.2);
-
-    border-radius: 30px;
-
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-}
-
-.final h2 {
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-.final p {
-    font-size: 17px;
-    line-height: 1.8;
-}
-
-#surpresa {
     margin-top: 30px;
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 25px;
+
     animation: aparecer 0.8s ease;
 }
 
-#surpresa h2 {
-    font-size: 30px;
-}
-
-/* =========================
-   ESCONDIDO
-========================= */
-
-.escondido {
-    display: none;
+.surpresa h2 {
+    margin-bottom: 15px;
 }
 
 /* =========================
@@ -249,8 +234,8 @@ button:hover {
 ========================= */
 
 @keyframes pulsar {
-
-    0%, 100% {
+    0%,
+    100% {
         transform: scale(1);
     }
 
@@ -259,8 +244,19 @@ button:hover {
     }
 }
 
-@keyframes aparecer {
+@keyframes entrar {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aparecer {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -272,16 +268,15 @@ button:hover {
     }
 }
 
-@keyframes carta {
-
+@keyframes abrirCarta {
     from {
         opacity: 0;
-        transform: scale(0.9);
+        transform: scale(0.9) rotate(-2deg);
     }
 
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1) rotate(0);
     }
 }
 
@@ -291,33 +286,40 @@ button:hover {
 
 @media (max-width: 600px) {
 
-    .inicio h1 {
-        font-size: 32px;
+    .tela {
+        padding: 35px 18px;
     }
 
-    .inicio .coracao {
-        font-size: 70px;
+    h1 {
+        font-size: 34px;
     }
 
-    .presente {
-        padding: 50px 15px;
-    }
-
-    .presente > h2 {
+    h2 {
         font-size: 28px;
     }
 
-    .cartao {
-        padding: 30px 20px;
-        margin: 25px auto;
+    h3 {
+        font-size: 20px;
     }
 
-    .cartao h3 {
-        font-size: 23px;
+    p {
+        font-size: 16px;
     }
 
-    .final {
-        padding: 35px 20px;
-        margin-top: 50px;
+    .icone {
+        font-size: 65px;
+    }
+
+    .momento {
+        padding: 18px;
+    }
+
+    .carta {
+        padding: 25px 20px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 14px 25px;
     }
 }
