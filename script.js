@@ -1,28 +1,20 @@
-function proximaTela(numero) {
+ function proximaTela(numero) {
     const telas = document.querySelectorAll(".tela");
 
     telas.forEach(function(tela) {
         tela.classList.remove("ativa");
     });
 
-    const tela = document.getElementById("tela" + numero);
+    const proxima = document.getElementById("tela" + numero);
 
-    if (tela) {
-        tela.classList.add("ativa");
+    if (proxima) {
+        proxima.classList.add("ativa");
     }
 
-    window.scrollTo(0, 0);
-
-    criarCoracoes();
-}
-
-
-function mostrarSurpresa() {
-    const surpresa = document.getElementById("surpresa");
-
-    if (surpresa) {
-        surpresa.style.display = "block";
-    }
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
     criarCoracoes();
 }
@@ -30,7 +22,7 @@ function mostrarSurpresa() {
 
 function criarCoracoes() {
 
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 15; i++) {
 
         const coracao = document.createElement("div");
 
@@ -40,7 +32,7 @@ function criarCoracoes() {
         coracao.style.left = Math.random() * 100 + "vw";
         coracao.style.top = "-40px";
         coracao.style.fontSize =
-            18 + Math.random() * 20 + "px";
+            (16 + Math.random() * 22) + "px";
 
         coracao.style.zIndex = "9999";
         coracao.style.pointerEvents = "none";
@@ -56,7 +48,8 @@ function criarCoracoes() {
                     opacity: 1
                 },
                 {
-                    transform: "translateY(110vh) rotate(360deg)",
+                    transform:
+                        "translateY(110vh) rotate(360deg)",
                     opacity: 0
                 }
             ],
