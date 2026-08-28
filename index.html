@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
 
 <body>
 
+    <!-- TELA INICIAL -->
     <main class="inicio">
 
         <div class="coracao">❤️</div>
@@ -18,8 +20,8 @@
         <h1>Para você, Synara</h1>
 
         <p>
-            Preparei uma pequena surpresa<br>
-            especialmente para você.
+            Eu preparei uma pequena surpresa<br>
+            especialmente para o seu aniversário.
         </p>
 
         <button onclick="abrirPresente()">
@@ -28,31 +30,130 @@
 
     </main>
 
+
+    <!-- PRESENTE -->
     <section id="presente" class="presente">
 
-        <h2>Feliz aniversário, meu amor! ❤️</h2>
+        <div class="coracao">💖</div>
+
+        <h2>Feliz aniversário, meu amor! 🎂</h2>
 
         <p>
-            Hoje é um dia muito especial,
-            porque é o dia em que celebramos você.
+            Hoje é um dia especial porque é o dia
+            de comemorar a existência de uma pessoa
+            muito importante para mim.
         </p>
 
-        <button onclick="mostrarCarta()">
-            Abrir minha carta 💌
-        </button>
 
-        <div id="carta" class="carta">
+        <!-- HISTÓRIA -->
+        <div class="cartao">
+
+            <h3>📖 Nossa história</h3>
+
             <p>
-                Você é uma pessoa muito especial para mim.
-                Espero que seu aniversário seja cheio de
-                felicidade, carinho e momentos inesquecíveis.
-                ❤️
+                Talvez a nossa história ainda esteja
+                começando, mas cada momento que vivemos
+                já tem um lugar especial no meu coração.
             </p>
+
+        </div>
+
+
+        <!-- MOTIVOS -->
+        <div class="cartao">
+
+            <h3>💗 Por que você é especial?</h3>
+
+            <p>
+                Porque você consegue tornar meus dias
+                mais felizes simplesmente sendo você.
+            </p>
+
+            <button onclick="mostrarMotivos()">
+                Descobrir 💕
+            </button>
+
+            <div id="motivos" class="escondido">
+
+                <p>❤️ Seu jeito</p>
+                <p>❤️ Seu sorriso</p>
+                <p>❤️ Sua companhia</p>
+                <p>❤️ Seu carinho</p>
+                <p>❤️ A pessoa que você é</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CARTA -->
+        <div class="cartao">
+
+            <h3>💌 Uma carta para você</h3>
+
+            <button onclick="mostrarCarta()">
+                Abrir carta 💌
+            </button>
+
+            <div id="carta" class="carta">
+
+                <p>
+                    Feliz aniversário, meu amor! ❤️
+                    <br><br>
+
+                    Quero que você saiba o quanto é
+                    especial para mim. Espero que esse
+                    novo ano da sua vida seja cheio de
+                    felicidade, sonhos realizados e
+                    momentos inesquecíveis.
+                    <br><br>
+
+                    Obrigado por fazer parte da minha vida.
+                    Que possamos continuar escrevendo
+                    nossa história juntos.
+                    <br><br>
+
+                    Eu te desejo tudo de melhor. ❤️
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FINAL -->
+        <div class="final">
+
+            <h2>🎁 Ainda tem uma surpresa...</h2>
+
+            <p>
+                Esse presente foi feito especialmente
+                para você.
+            </p>
+
+            <button onclick="surpresaFinal()">
+                Descobrir surpresa ❤️
+            </button>
+
+            <div id="surpresa" class="escondido">
+
+                <h2>❤️ Eu te amo, Synara! ❤️</h2>
+
+                <p>
+                    Feliz aniversário, meu amor.
+                    Que seu dia seja tão especial
+                    quanto você é para mim.
+                </p>
+
+            </div>
+
         </div>
 
     </section>
 
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
