@@ -11,16 +11,34 @@ function mostrarCarta() {
     criarCoracoes();
 }
 
+function mostrarMotivos() {
+    document.getElementById("motivos").style.display = "block";
+
+    criarCoracoes();
+}
+
+function surpresaFinal() {
+    document.getElementById("surpresa").style.display = "block";
+
+    criarCoracoes();
+}
+
+/* Corações caindo */
+
 function criarCoracoes() {
-    for (let i = 0; i < 15; i++) {
+
+    for (let i = 0; i < 20; i++) {
+
         const coracao = document.createElement("div");
 
         coracao.innerHTML = "❤️";
 
         coracao.style.position = "fixed";
         coracao.style.left = Math.random() * 100 + "vw";
-        coracao.style.top = "-30px";
-        coracao.style.fontSize = (15 + Math.random() * 25) + "px";
+        coracao.style.top = "-40px";
+        coracao.style.fontSize =
+            (15 + Math.random() * 25) + "px";
+
         coracao.style.zIndex = "9999";
         coracao.style.pointerEvents = "none";
 
@@ -35,7 +53,8 @@ function criarCoracoes() {
                     opacity: 1
                 },
                 {
-                    transform: "translateY(110vh) rotate(360deg)",
+                    transform:
+                        "translateY(110vh) rotate(360deg)",
                     opacity: 0
                 }
             ],
