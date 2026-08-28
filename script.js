@@ -1,33 +1,45 @@
-function abrirPresente() {
-    document.querySelector(".inicio").style.display = "none";
-    document.querySelector(".presente").style.display = "block";
 
+function proximaTela(numero) {
+    // Esconde todas as telas
+    const telas = document.querySelectorAll(".tela");
+
+    telas.forEach(function(tela) {
+        tela.classList.remove("ativa");
+    });
+
+    // Mostra a próxima tela
+    const proxima = document.getElementById("tela" + numero);
+
+    proxima.classList.add("ativa");
+
+    // Volta para o topo
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    // Solta alguns corações
     criarCoracoes();
 }
 
-function mostrarCarta() {
-    document.getElementById("carta").style.display = "block";
+
+function mostrarSurpresa() {
+    const surpresa = document.getElementById("surpresa");
+
+    surpresa.style.display = "block";
 
     criarCoracoes();
+
+    // Mais corações depois de um pequeno tempo
+    setTimeout(function() {
+        criarCoracoes();
+    }, 800);
 }
 
-function mostrarMotivos() {
-    document.getElementById("motivos").style.display = "block";
-
-    criarCoracoes();
-}
-
-function surpresaFinal() {
-    document.getElementById("surpresa").style.display = "block";
-
-    criarCoracoes();
-}
-
-/* Corações caindo */
 
 function criarCoracoes() {
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 15; i++) {
 
         const coracao = document.createElement("div");
 
@@ -35,9 +47,10 @@ function criarCoracoes() {
 
         coracao.style.position = "fixed";
         coracao.style.left = Math.random() * 100 + "vw";
-        coracao.style.top = "-40px";
+        coracao.style.top = "-30px";
+
         coracao.style.fontSize =
-            (15 + Math.random() * 25) + "px";
+            (15 + Math.random() * 20) + "px";
 
         coracao.style.zIndex = "9999";
         coracao.style.pointerEvents = "none";
@@ -64,7 +77,7 @@ function criarCoracoes() {
             }
         );
 
-        setTimeout(() => {
+        setTimeout(function() {
             coracao.remove();
         }, duracao * 1000);
     }
