@@ -9,203 +9,261 @@ html {
 }
 
 body {
-    font-family: Georgia, "Times New Roman", serif;
-    background:
-        radial-gradient(circle at top, #8f3158 0%, transparent 40%),
-        linear-gradient(135deg, #16000e, #3d0929, #7c2450);
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #18000f, #4d0b32, #8e2458);
     color: white;
     min-height: 100vh;
     overflow-x: hidden;
 }
 
-/* Fundo decorativo */
-
-body::before {
-    content: "♡  ✦  ♡  ✧  ♡  ✦  ♡  ✧";
-    position: fixed;
-    inset: 0;
-    font-size: 30px;
-    line-height: 100px;
-    word-spacing: 35px;
-    opacity: 0.08;
-    pointer-events: none;
-    animation: fundo 20s linear infinite;
-}
-
-/* Tela inicial */
+/* =========================
+   TELA INICIAL
+========================= */
 
 .inicio {
     min-height: 100vh;
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 30px;
 }
 
-.coracao {
-    font-size: 90px;
-    margin-bottom: 15px;
-    animation: pulsar 1.5s infinite;
-    filter: drop-shadow(0 0 25px #ff8bb5);
+.inicio .coracao {
+    font-size: 85px;
+    margin-bottom: 20px;
+    animation: pulsar 1.6s infinite;
+    filter: drop-shadow(0 0 25px #ff4f9a);
 }
 
-h1 {
-    font-size: 48px;
+.inicio h1 {
+    font-size: 42px;
     margin-bottom: 15px;
-    text-shadow: 0 0 20px rgba(255,255,255,0.4);
 }
 
 .inicio p {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.7;
-    opacity: 0.9;
+    max-width: 500px;
 }
 
-/* Botões */
+/* =========================
+   BOTÕES
+========================= */
 
 button {
     border: none;
-    outline: none;
-    padding: 16px 30px;
-    margin-top: 25px;
+    padding: 15px 28px;
     border-radius: 50px;
+    margin-top: 25px;
+
     background: white;
-    color: #9b2859;
-    font-size: 17px;
+    color: #8e2458;
+
+    font-size: 16px;
     font-weight: bold;
+
     cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+
     transition: 0.3s;
 }
 
 button:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 30px rgba(255,255,255,0.5);
+    transform: translateY(-3px) scale(1.04);
 }
 
-/* Área do presente */
+/* =========================
+   ÁREA DO PRESENTE
+========================= */
 
 .presente {
     display: none;
-    min-height: 100vh;
+    width: 100%;
+    max-width: 850px;
+
+    margin: auto;
     padding: 70px 20px;
     text-align: center;
 }
 
-.presente h2 {
-    font-size: 38px;
+.presente > .coracao {
+    font-size: 70px;
+    margin-bottom: 15px;
+
+    animation: pulsar 1.6s infinite;
+}
+
+.presente > h2 {
+    font-size: 36px;
     margin-bottom: 20px;
 }
 
 .presente > p {
     max-width: 650px;
-    margin: auto;
-    font-size: 19px;
-    line-height: 1.7;
+    margin: 0 auto 50px;
+
+    font-size: 18px;
+    line-height: 1.8;
 }
 
-/* Cartões */
+/* =========================
+   CARTÕES
+========================= */
 
 .cartao {
-    max-width: 650px;
-    margin: 35px auto;
-    padding: 35px 25px;
-    background: rgba(255,255,255,0.10);
+    width: 100%;
+    max-width: 700px;
+
+    margin: 30px auto;
+    padding: 35px 30px;
+
+    background: rgba(255,255,255,0.09);
+
     border: 1px solid rgba(255,255,255,0.2);
+
     border-radius: 25px;
-    backdrop-filter: blur(10px);
+
+    backdrop-filter: blur(12px);
+
     box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-    animation: aparecer 0.8s ease;
+
+    transition: 0.3s;
+}
+
+.cartao:hover {
+    transform: translateY(-4px);
 }
 
 .cartao h3 {
-    font-size: 27px;
+    font-size: 26px;
     margin-bottom: 18px;
 }
 
-.cartao p {
-    font-size: 18px;
-    line-height: 1.7;
+.cartao > p {
+    font-size: 17px;
+    line-height: 1.8;
 }
 
-/* Motivos */
+/* =========================
+   MOTIVOS
+========================= */
 
 #motivos {
     margin-top: 25px;
 }
 
 #motivos p {
-    margin: 12px 0;
+    margin: 10px auto;
     padding: 12px;
+
+    max-width: 400px;
+
     background: rgba(255,255,255,0.08);
     border-radius: 15px;
+
     animation: aparecer 0.5s ease;
 }
 
-/* Carta */
+/* =========================
+   CARTA
+========================= */
 
 .carta {
     display: none;
+
+    max-width: 600px;
+
     margin: 30px auto 0;
-    max-width: 560px;
     padding: 30px;
-    background: #fff8fb;
-    color: #552039;
+
+    background: #fff8fc;
+
+    color: #542039;
+
     border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
-    animation: abrirCarta 0.8s ease;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+
+    animation: carta 0.7s ease;
 }
 
 .carta p {
-    font-size: 18px;
-    line-height: 1.8;
+    font-size: 17px;
+    line-height: 1.9;
 }
 
-/* Final */
+/* =========================
+   SURPRESA FINAL
+========================= */
 
 .final {
+    width: 100%;
     max-width: 700px;
+
     margin: 70px auto 20px;
     padding: 45px 25px;
-    border-radius: 30px;
+
+    text-align: center;
+
     background: rgba(255,255,255,0.08);
+
     border: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+
+    border-radius: 30px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
 }
 
 .final h2 {
-    font-size: 32px;
+    font-size: 30px;
+    margin-bottom: 15px;
 }
 
 .final p {
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 17px;
+    line-height: 1.8;
 }
 
-/* Elementos escondidos */
+#surpresa {
+    margin-top: 30px;
+    animation: aparecer 0.8s ease;
+}
+
+#surpresa h2 {
+    font-size: 30px;
+}
+
+/* =========================
+   ESCONDIDO
+========================= */
 
 .escondido {
     display: none;
 }
 
-/* Animações */
+/* =========================
+   ANIMAÇÕES
+========================= */
 
 @keyframes pulsar {
+
     0%, 100% {
         transform: scale(1);
     }
 
     50% {
-        transform: scale(1.18);
+        transform: scale(1.15);
     }
 }
 
 @keyframes aparecer {
+
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
 
     to {
@@ -214,58 +272,52 @@ button:hover {
     }
 }
 
-@keyframes abrirCarta {
+@keyframes carta {
+
     from {
         opacity: 0;
-        transform: scale(0.8) rotate(-2deg);
+        transform: scale(0.9);
     }
 
     to {
         opacity: 1;
-        transform: scale(1) rotate(0);
+        transform: scale(1);
     }
 }
 
-@keyframes fundo {
-    from {
-        transform: translateY(0);
-    }
-
-    to {
-        transform: translateY(-100px);
-    }
-}
-
-/* Celular */
+/* =========================
+   CELULAR
+========================= */
 
 @media (max-width: 600px) {
 
-    h1 {
-        font-size: 35px;
+    .inicio h1 {
+        font-size: 32px;
     }
 
-    .coracao {
+    .inicio .coracao {
         font-size: 70px;
     }
 
-    .inicio p {
-        font-size: 17px;
+    .presente {
+        padding: 50px 15px;
     }
 
-    .presente h2 {
-        font-size: 29px;
+    .presente > h2 {
+        font-size: 28px;
     }
 
     .cartao {
-        padding: 28px 20px;
+        padding: 30px 20px;
+        margin: 25px auto;
     }
 
     .cartao h3 {
-        font-size: 24px;
+        font-size: 23px;
     }
 
-    button {
-        font-size: 16px;
-        padding: 14px 25px;
+    .final {
+        padding: 35px 20px;
+        margin-top: 50px;
     }
 }
