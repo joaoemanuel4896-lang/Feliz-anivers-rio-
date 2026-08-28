@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Para Synara ❤️</title>
 
     <link rel="stylesheet" href="style.css">
@@ -12,140 +11,193 @@
 
 <body>
 
-    <!-- TELA INICIAL -->
-    <main class="inicio">
+    <!-- TELA 1 -->
+    <section class="tela ativa" id="tela1">
 
-        <div class="coracao">❤️</div>
+        <div class="icone">❤️</div>
 
         <h1>Para você, Synara</h1>
 
         <p>
-            Eu preparei uma pequena surpresa<br>
+            Preparei uma surpresa<br>
             especialmente para o seu aniversário.
         </p>
 
-        <button onclick="abrirPresente()">
+        <button onclick="proximaTela(2)">
             Abrir meu presente 🎁
         </button>
 
-    </main>
+    </section>
 
 
-    <!-- PRESENTE -->
-    <section id="presente" class="presente">
+    <!-- TELA 2 -->
+    <section class="tela" id="tela2">
 
-        <div class="coracao">💖</div>
+        <div class="icone">🎂</div>
 
-        <h2>Feliz aniversário, meu amor! 🎂</h2>
+        <h2>Feliz aniversário, meu amor!</h2>
 
         <p>
-            Hoje é um dia especial porque é o dia
-            de comemorar a existência de uma pessoa
-            muito importante para mim.
+            Hoje é um dia muito especial,
+            porque é o dia de celebrar você.
         </p>
 
+        <button onclick="proximaTela(3)">
+            Continuar ❤️
+        </button>
 
-        <!-- HISTÓRIA -->
-        <div class="cartao">
-
-            <h3>📖 Nossa história</h3>
-
-            <p>
-                Talvez a nossa história ainda esteja
-                começando, mas cada momento que vivemos
-                já tem um lugar especial no meu coração.
-            </p>
-
-        </div>
+    </section>
 
 
-        <!-- MOTIVOS -->
-        <div class="cartao">
+    <!-- TELA 3 -->
+    <section class="tela" id="tela3">
 
-            <h3>💗 Por que você é especial?</h3>
+        <div class="icone">📖</div>
 
-            <p>
-                Porque você consegue tornar meus dias
-                mais felizes simplesmente sendo você.
-            </p>
+        <h2>Nossa história</h2>
 
-            <button onclick="mostrarMotivos()">
-                Descobrir 💕
-            </button>
+        <div class="historia">
 
-            <div id="motivos" class="escondido">
-
-                <p>❤️ Seu jeito</p>
-                <p>❤️ Seu sorriso</p>
-                <p>❤️ Sua companhia</p>
-                <p>❤️ Seu carinho</p>
-                <p>❤️ A pessoa que você é</p>
-
-            </div>
-
-        </div>
-
-
-        <!-- CARTA -->
-        <div class="cartao">
-
-            <h3>💌 Uma carta para você</h3>
-
-            <button onclick="mostrarCarta()">
-                Abrir carta 💌
-            </button>
-
-            <div id="carta" class="carta">
-
+            <div class="momento">
+                <span>✨</span>
+                <h3>O começo</h3>
                 <p>
-                    Feliz aniversário, meu amor! ❤️
-                    <br><br>
-
-                    Quero que você saiba o quanto é
-                    especial para mim. Espero que esse
-                    novo ano da sua vida seja cheio de
-                    felicidade, sonhos realizados e
-                    momentos inesquecíveis.
-                    <br><br>
-
-                    Obrigado por fazer parte da minha vida.
-                    Que possamos continuar escrevendo
-                    nossa história juntos.
-                    <br><br>
-
-                    Eu te desejo tudo de melhor. ❤️
+                    Foi aqui que tudo começou...
                 </p>
+            </div>
 
+            <div class="momento">
+                <span>❤️</span>
+                <h3>01/06/2026</h3>
+                <p>
+                    Às 21:37, começou uma nova
+                    parte da nossa história.
+                </p>
+            </div>
+
+            <div class="momento">
+                <span>🥰</span>
+                <h3>Nosso primeiro mês</h3>
+                <p>
+                    Um mês de carinho,
+                    conversas e momentos especiais.
+                </p>
+            </div>
+
+            <div class="momento">
+                <span>💕</span>
+                <h3>Hoje</h3>
+                <p>
+                    E essa história continua
+                    sendo escrita.
+                </p>
             </div>
 
         </div>
 
+        <button onclick="proximaTela(4)">
+            Continuar 💗
+        </button>
 
-        <!-- FINAL -->
-        <div class="final">
+    </section>
 
-            <h2>🎁 Ainda tem uma surpresa...</h2>
+
+    <!-- TELA 4 -->
+    <section class="tela" id="tela4">
+
+        <div class="icone">💗</div>
+
+        <h2>Por que você é especial?</h2>
+
+        <div class="motivos">
+
+            <p>❤️ Pelo seu jeito</p>
+            <p>❤️ Pelo seu carinho</p>
+            <p>❤️ Pela pessoa que você é</p>
+            <p>❤️ Por me fazer sorrir</p>
+            <p>❤️ Simplesmente por ser você</p>
+
+        </div>
+
+        <button onclick="proximaTela(5)">
+            Próxima surpresa 💌
+        </button>
+
+    </section>
+
+
+    <!-- TELA 5 -->
+    <section class="tela" id="tela5">
+
+        <div class="icone">💌</div>
+
+        <h2>Uma carta para você</h2>
+
+        <div class="carta">
 
             <p>
-                Esse presente foi feito especialmente
-                para você.
+                Feliz aniversário, meu amor! ❤️
             </p>
 
-            <button onclick="surpresaFinal()">
-                Descobrir surpresa ❤️
-            </button>
+            <p>
+                Quero que você saiba o quanto
+                você é especial para mim.
+            </p>
 
-            <div id="surpresa" class="escondido">
+            <p>
+                Espero que seu novo ano seja
+                cheio de felicidade, sonhos
+                realizados e momentos incríveis.
+            </p>
 
-                <h2>❤️ Eu te amo, Synara! ❤️</h2>
+            <p>
+                Obrigado por fazer parte da minha vida.
+                Que possamos continuar escrevendo
+                nossa história juntos.
+            </p>
 
-                <p>
-                    Feliz aniversário, meu amor.
-                    Que seu dia seja tão especial
-                    quanto você é para mim.
-                </p>
+            <p>
+                Com todo meu carinho. ❤️
+            </p>
 
-            </div>
+        </div>
+
+        <button onclick="proximaTela(6)">
+            Ainda tem mais... 🎁
+        </button>
+
+    </section>
+
+
+    <!-- TELA 6 -->
+    <section class="tela" id="tela6">
+
+        <div class="icone">🎁</div>
+
+        <h2>Minha última surpresa</h2>
+
+        <p>
+            Se você chegou até aqui,
+            é porque abriu cada pedacinho
+            desse presente.
+        </p>
+
+        <button onclick="mostrarSurpresa()">
+            Abrir ❤️
+        </button>
+
+        <div id="surpresa" class="surpresa">
+
+            <h2>Feliz aniversário, Synara! ❤️</h2>
+
+            <p>
+                Que seu dia seja lindo,
+                especial e cheio de felicidade.
+            </p>
+
+            <p>
+                Você merece tudo de melhor! 💕
+            </p>
 
         </div>
 
