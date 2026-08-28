@@ -4,28 +4,35 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #180018, #5c123f, #b52b67);
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(circle at top, #8f3158 0%, transparent 40%),
+        linear-gradient(135deg, #16000e, #3d0929, #7c2450);
     color: white;
     min-height: 100vh;
     overflow-x: hidden;
 }
 
+/* Fundo decorativo */
+
 body::before {
-    content: "♥  ✦  ♥  ✧  ♥  ✦  ♥  ✧  ♥";
+    content: "♡  ✦  ♡  ✧  ♡  ✦  ♡  ✧";
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     font-size: 30px;
     line-height: 100px;
     word-spacing: 35px;
-    opacity: 0.12;
-    animation: estrelas 15s linear infinite;
+    opacity: 0.08;
     pointer-events: none;
+    animation: fundo 20s linear infinite;
 }
+
+/* Tela inicial */
 
 .inicio {
     min-height: 100vh;
@@ -34,58 +41,231 @@ body::before {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 25px;
+    padding: 30px;
 }
 
 .coracao {
     font-size: 90px;
+    margin-bottom: 15px;
     animation: pulsar 1.5s infinite;
-    filter: drop-shadow(0 0 20px #ff6b9d);
+    filter: drop-shadow(0 0 25px #ff8bb5);
 }
 
 h1 {
-    font-size: 45px;
-    margin: 20px 0 10px;
-    text-shadow: 0 0 20px rgba(255,255,255,0.5);
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(255,255,255,0.4);
 }
 
 .inicio p {
     font-size: 20px;
+    line-height: 1.7;
     opacity: 0.9;
 }
 
+/* Botões */
+
 button {
     border: none;
-    padding: 16px 32px;
-    margin-top: 30px;
+    outline: none;
+    padding: 16px 30px;
+    margin-top: 25px;
     border-radius: 50px;
     background: white;
-    color: #b52b67;
-    font-size: 18px;
+    color: #9b2859;
+    font-size: 17px;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     transition: 0.3s;
 }
 
 button:hover {
     transform: scale(1.08);
-    box-shadow: 0 0 30px rgba(255,255,255,0.6);
+    box-shadow: 0 0 30px rgba(255,255,255,0.5);
 }
+
+/* Área do presente */
 
 .presente {
     display: none;
     min-height: 100vh;
-    padding: 70px 25px;
+    padding: 70px 20px;
     text-align: center;
 }
 
 .presente h2 {
-    font-size: 36px;
+    font-size: 38px;
     margin-bottom: 20px;
 }
 
+.presente > p {
+    max-width: 650px;
+    margin: auto;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+/* Cartões */
+
+.cartao {
+    max-width: 650px;
+    margin: 35px auto;
+    padding: 35px 25px;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    animation: aparecer 0.8s ease;
+}
+
+.cartao h3 {
+    font-size: 27px;
+    margin-bottom: 18px;
+}
+
+.cartao p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* Motivos */
+
+#motivos {
+    margin-top: 25px;
+}
+
+#motivos p {
+    margin: 12px 0;
+    padding: 12px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 15px;
+    animation: aparecer 0.5s ease;
+}
+
+/* Carta */
+
 .carta {
     display: none;
-    max-width: 650px;
-   
+    margin: 30px auto 0;
+    max-width: 560px;
+    padding: 30px;
+    background: #fff8fb;
+    color: #552039;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+    animation: abrirCarta 0.8s ease;
+}
+
+.carta p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Final */
+
+.final {
+    max-width: 700px;
+    margin: 70px auto 20px;
+    padding: 45px 25px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+}
+
+.final h2 {
+    font-size: 32px;
+}
+
+.final p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* Elementos escondidos */
+
+.escondido {
+    display: none;
+}
+
+/* Animações */
+
+@keyframes pulsar {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes abrirCarta {
+    from {
+        opacity: 0;
+        transform: scale(0.8) rotate(-2deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+@keyframes fundo {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+/* Celular */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .coracao {
+        font-size: 70px;
+    }
+
+    .inicio p {
+        font-size: 17px;
+    }
+
+    .presente h2 {
+        font-size: 29px;
+    }
+
+    .cartao {
+        padding: 28px 20px;
+    }
+
+    .cartao h3 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 14px 25px;
+    }
+}
